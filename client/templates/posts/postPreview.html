@@ -1,0 +1,28 @@
+<template name="postPreview">
+  <div class="post-preview">
+    <a href="{{pathToPost _id}}">
+      <h2 class="post-title">
+        {{title}}
+      </h2>
+      <h3 class="post-subtitle">
+        {{subtitle}}
+      </h3>
+    </a>
+    <p class="post-meta">Posted by
+      <a href="{{ pathToUserId authorId }}">
+        {{author}}
+      </a> on {{ dateFormat created }}
+      <div class="post-tags">
+        Tags:
+        {{#each tag in tags}}
+          <a href="{{ pathToRoute 'tag' tag }}" class="tag-link">
+            <span class="label label-{{ assignTagColor tag }} tag-span">
+              <span class="glyphicon glyphicon-tag"></span>
+              {{tag}}
+            </span>
+          </a>
+        {{/each}}
+      </div>
+    </p>
+  </div>
+</template>
