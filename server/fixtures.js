@@ -10,7 +10,7 @@ if (Posts.find().count() === 0) {
     authorId: 1,
     created: new Date(now - 10000),
     updated: null,
-    markdownContent: '# It was a dark and stormy night\n\nBut unfortunately there\'s more to this post\n',
+    markdownContent: '\n# It was a dark and stormy night\n\nBut unfortunately there\'s more to this post\n',
     tags: [ 'code' ]
   });
   Posts.insert({
@@ -20,7 +20,7 @@ if (Posts.find().count() === 0) {
     authorId: 1,
     created: new Date(now - 20000),
     updated: null,
-    markdownContent: '# Programmers are really lazy\n\nTrue story, they just pretend\n',
+    markdownContent: '\n# Programmers are really lazy\n\nTrue story, they just pretend\n',
     tags: [ 'design' ],
   });
   Posts.insert({
@@ -30,7 +30,7 @@ if (Posts.find().count() === 0) {
     authorId: 1,
     created: new Date(now - 30000),
     updated: null,
-    markdownContent: '# This is really it\n\nShit just got realz\n',
+    markdownContent: '\n# This is really it\n\nShit just got realz\n',
     tags: [ 'lifestyle' ],
   });
   for (var i = 0; i < 10; i++) {
@@ -41,7 +41,7 @@ if (Posts.find().count() === 0) {
       authorId: 1,
       created: new Date(now - i * 3600 * 1000),
       updated: null,
-      markdownContent: '# This should be an h1 \n\n ## This should be an h2 \n\nThis should be a regular paragraph\n\nThis is test post # ' + 1,
+      markdownContent: '\n# This should be an h1\n\n## This should be an h2 \n\nThis should be a regular paragraph\n\nThis is test post # ' + 1,
       tags: [Random.choice(tags)],
     });
   }

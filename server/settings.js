@@ -7,11 +7,8 @@ if (Blog.find().count() === 0) {
     copyright: 'Kirk P. Sefchik 2016'
   });
   Blog.insert({
-    _storeName: 'stats',
-    newUsers: 20,
-    newComments: 40,
-    newLogins: 22,
-    returningUsers: 14,
+    _storeName: 'display',
+    postsPerPage: 3,
   });
   Blog.insert({
     _storeName: 'menuItems',

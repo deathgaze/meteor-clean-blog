@@ -39,7 +39,11 @@ Template.registerHelper('blogSettings', (store, key) => {
     if (data) {
       return data;
     }
-    return ` --- key \'${key}\' not found in store \'${store}\'`;
+    return '';
   }
-  return ` --- store \'${store}\' not found --- `;
+  return '';
+});
+
+Template.registerHelper('postCount', (tag) => {
+  return Meteor.call('postCount', tag);
 });

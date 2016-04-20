@@ -13,7 +13,6 @@
         {{author}}
       </a> on {{ dateFormat created }}
       <div class="post-tags">
-        Tags:
         {{#each tag in tags}}
           <a href="{{ pathToRoute 'tag' tag }}" class="tag-link">
             <span class="label label-{{ assignTagColor tag }} tag-span">

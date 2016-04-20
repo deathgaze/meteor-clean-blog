@@ -1,22 +1,32 @@
 <template name="postsList">
   <!-- Header -->
   {{> blogHeader }}
-  
+
   <!-- Main Content -->
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-
-        {{#each posts}}
-          {{> postPreview}}
-          <hr>
-        {{/each}}
+        {{#if Template.subscriptionsReady}}
+          {{#each posts}}
+            {{> postPreview}}
+            <hr>
+          {{/each}}
+        {{else}}
+          {{> spinner}}
+        {{/if}}
 
         <!-- Pager -->
         <ul class="pager">
-          <li class="next">
-            <a href="#">Older Posts &rarr;</a>
-          </li>
+          {{#if newerPosts}}
+            <li class="previous">
+              <a href="#">&larr; Newer Posts </a>
+            </li>
+          {{/if}}
+          {{#if olderPosts}}
+            <li class="next">
+              <a href="#">Older Posts &rarr;</a>
+            </li>
+          {{/if}}
         </ul>
       </div>
     </div>
