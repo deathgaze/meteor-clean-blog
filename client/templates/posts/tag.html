@@ -8,16 +8,27 @@
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <h2 class="section-heading">Posts tagged '{{tag}}:'</h2>
         <hr />
-        {{#each posts}}
-          {{> postPreview}}
-          <hr>
-        {{/each}}
+        {{#if postPreviewsReady}}
+          {{#each posts}}
+            {{> postPreview}}
+            <hr>
+          {{/each}}
+        {{else}}
+          {{> spinner}}
+        {{/if}}
 
         <!-- Pager -->
         <ul class="pager">
-          <li class="next">
-            <a href="#">Older Posts &rarr;</a>
-          </li>
+          {{#if showNewerPostsButton}}
+            <li class="previous previousButton">
+              <a>&larr; Newer Posts</a>
+            </li>
+          {{/if}}
+          {{#if showOlderPostsButton}}
+            <li class="next nextButton">
+              <a>Older Posts &rarr;</a>
+            </li>
+          {{/if}}
         </ul>
       </div>
     </div>
