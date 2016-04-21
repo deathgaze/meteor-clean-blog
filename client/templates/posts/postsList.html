@@ -6,7 +6,7 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        {{#if Template.subscriptionsReady}}
+        {{#if postPreviewsReady}}
           {{#each posts}}
             {{> postPreview}}
             <hr>
@@ -17,14 +17,14 @@
 
         <!-- Pager -->
         <ul class="pager">
-          {{#if newerPosts}}
-            <li class="previous">
-              <a href="#">&larr; Newer Posts </a>
+          {{#if showNewerPostsButton}}
+            <li class="previous previousButton">
+              &larr; Newer Posts
             </li>
           {{/if}}
-          {{#if olderPosts}}
-            <li class="next">
-              <a href="#">Older Posts &rarr;</a>
+          {{#if showOlderPostsButton}}
+            <li class="next nextButton">
+              Older Posts &rarr;
             </li>
           {{/if}}
         </ul>

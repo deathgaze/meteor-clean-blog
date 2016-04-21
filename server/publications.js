@@ -12,8 +12,7 @@ Meteor.publish('singlePost', function(id) {
 });
 
 Meteor.publish('postPreviews', function(page, tag, postsPerPage) {
-  if (page !== undefined) {
-    check(page, Match.Integer);
+  if (page !== undefined && !isNaN(page)) {
     if (page < 0) {
       page = 0;
     }

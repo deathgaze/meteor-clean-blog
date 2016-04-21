@@ -33,15 +33,8 @@ Template.registerHelper('dateFormat', (date) => {
 });
 
 Template.registerHelper('blogSettings', (store, key) => {
-  const cursor = Blog.findOne({ _storeName: store }, { _storeName: false });
-  if (cursor) {
-    const data = cursor[key];
-    if (data) {
-      return data;
-    }
-    return '';
-  }
-  return '';
+  const data = getBlogSetting(store, key);
+  return (data !== undefined) ? data : undefined;
 });
 
 Template.registerHelper('postCount', (tag) => {
